@@ -17,8 +17,13 @@ public class ItemIdPlayerListener extends PlayerListener{
 		String[] split = event.getMessage().split(" ");
 		//Get the player that talked.
 		Player player = event.getPlayer();
+		boolean canUseCommand = true;
 		
-		if ((split[0].equalsIgnoreCase("/itemid"))) {
+		if (ItemId.Permissions != null) {
+			canUseCommand = ItemId.Permissions.has(player, "itemid.usecmd");
+		}
+		
+		if (split[0].equalsIgnoreCase("/itemid") && canUseCommand) {
 			if (split.length > 1) {
 			  try {
 			    int dataid = Integer.parseInt(split[1]);
