@@ -1,3 +1,16 @@
 name: ItemId
 main: com.lonelydime.ItemId.ItemId
-version: 1.11
+version: 1.12
+website: https://github.com/lonelydime
+author: lonelydime
+description: >
+             Get the ids of items.
+
+commands:
+  itemid:
+    description: Returns the data id or data name given the item name or id, respectively.
+    usage: |
+           /<command> [item id or name]
+           Example: /<command> - Returns the id of the item in hand.
+           Example: /<command> diamond sword - Returns 276
+           Example: /<command> 276 - Returns DIAMOND_SWORD
